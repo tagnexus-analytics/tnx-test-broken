@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TNX Test - Source (Broken)</title>
+</head>
+<body>
+<h1>Source page - BROKEN cross-domain linking</h1>
+<p>This page fires GA4 but does NOT set up cross-domain linking to the
+checkout link below. Expected result when scanned: the Tracking Checker
+SHOULD flag a cross-domain tracking gap.</p>
+
+<p><a id="test-link" href="https://tagnexus-analytics.github.io/tnx-test-destination/">Proceed to Checkout</a></p>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNXTESTBROKEN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TNXTESTBROKEN');
+</script>
+</body>
+</html>
